@@ -22,7 +22,8 @@ const isFirefoxWithOpfs = (): boolean => {
 };
 
 export const browserFeatures = {
-  opfs: isBrowser && (isChromeWithOpfs() || isFirefoxWithOpfs()),
+  // Opfs is problematic to setup in Goodlok monorepo. Disable it for now.
+  opfs: false && isBrowser && (isChromeWithOpfs() || isFirefoxWithOpfs()),
 };
 
 const localStorageKey = "evolu:reloadAllTabs";
