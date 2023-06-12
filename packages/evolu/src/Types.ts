@@ -197,10 +197,9 @@ export type SchemaForQuery<S extends Schema> = {
 };
 
 export type KyselySelectFrom<DB> = Pick<Kysely.Kysely<DB>, "selectFrom">;
-export type KyselyFn<DB> = Pick<Kysely.Kysely<DB>, "fn">;
 
 export type QueryCallback<S extends Schema, QueryRow> = (
-  db: KyselySelectFrom<SchemaForQuery<S>> & KyselyFn<SchemaForQuery<S>>
+  db: KyselySelectFrom<SchemaForQuery<S>>
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
 ) => Kysely.SelectQueryBuilder<any, any, QueryRow>;
 
